@@ -4,6 +4,7 @@ import ControlledInputField from "./components/ControlledInputField";
 import ToggleVisibility from "./components/ToggleVisibility";
 import CharacterCounter from "./components/CharacterCounter";
 import TodoList from "./components/TodoList";
+import ColorSwitcher from "./components/ColorSwitcher";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <CharacterCounter />
       <hr />
       <TodoList/>
+      <hr />
+      <ColorSwitcher />
     </>
   );
 }
