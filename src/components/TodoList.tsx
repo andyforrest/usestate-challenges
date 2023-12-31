@@ -1,11 +1,20 @@
 import { useState } from "react";
 
+let nextId = 0;
+
 function TodoList() {
-  const [todos, setTodos] = useState<string[]>([]);
+  const [todos, setTodos] = useState<{ id: number; title: string }[]>([]);
   const [title, setTitle] = useState("");
   function addTodo(title: string) {
-    setTodos([...todos, title]);
+    setTodos([...todos, { id: nextId++, title: title }]);
     setTitle("");
+  }
+  function deleteTodo(id: number) {
+    setTodos(
+      todos.filter((todo) => {
+        return todo.id !== id;
+      })
+    );
   }
   return (
     <div>
@@ -16,8 +25,11 @@ function TodoList() {
       />
       <button onClick={() => addTodo(title)}>Add Todo</button>
       <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            {todo.title}
+            <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>

@@ -4,6 +4,7 @@ function ToggleVisibility() {
   const [visibility, setVisibility] = useState("Toggle me!");
 
   function handleClick() {
+    console.log("click")
     visibility === "" ? setVisibility("Toggle me!") : setVisibility("");
   }
 
