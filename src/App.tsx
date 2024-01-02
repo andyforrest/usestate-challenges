@@ -5,6 +5,7 @@ import ToggleVisibility from "./components/ToggleVisibility";
 import CharacterCounter from "./components/CharacterCounter";
 import TodoList from "./components/TodoList";
 import ColorSwitcher from "./components/ColorSwitcher";
+import SearchFilter from "./components/SearchFilter";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <TodoList/>
       <hr />
       <ColorSwitcher />
+      <hr />
+      <SearchFilter />
     </>
   );
 }
